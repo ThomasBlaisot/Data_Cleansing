@@ -81,7 +81,9 @@ numeric_columns = [
     "proteins_100g", "salt_100g", "fat_100g", "saturated-fat_100g"
 ]
 
+
 outliers = {}
+
 for column in numeric_columns:
     quantiles = df_clean.approxQuantile(column, [0.25, 0.75], 0.01)  # Précision à 1%
     q1, q3 = quantiles[0], quantiles[1]
